@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
+    kotlin("kapt")
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
@@ -44,12 +45,17 @@ dependencies {
 
     implementation(project(":domain"))
 
+    // Moshi
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    kapt(libs.moshi.kotlin.codegen)
+
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.rxjava2)
     implementation(libs.retrofit.moshi)
 
-    // Test 
+    // Test
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.test.junit4)
     testImplementation(libs.coroutines.test)
