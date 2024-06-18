@@ -7,8 +7,9 @@ include(
 
 pluginManagement {
     repositories {
-        google()
         gradlePluginPortal()
+        google()
+        mavenCentral()
     }
     resolutionStrategy {
         eachPlugin {

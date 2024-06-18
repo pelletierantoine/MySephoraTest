@@ -7,11 +7,12 @@ kotlin = "1.9.0"
 appcompat = "1.7.0"
 coreKtx = "1.13.1"
 coroutines = "1.7.3"
-koin = "3.4.2"
+koin = "3.4.3"
 espressoCore = "3.5.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 material = "1.12.0"
+mockk = "1.13.3" # use old version because there is bug with android testing https://github.com/mockk/mockk/issues/1035
 moshi = "1.15.0"
 okhttp = "4.11.0"
 retrofit = "2.9.0"
@@ -33,6 +34,7 @@ koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
