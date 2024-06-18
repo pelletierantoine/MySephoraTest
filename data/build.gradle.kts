@@ -50,6 +50,10 @@ dependencies {
     implementation(libs.moshi.kotlin)
     kapt(libs.moshi.kotlin.codegen)
 
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp.logging)
+    implementation(libs.okhttp.urlconnection)
+
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.rxjava2)
