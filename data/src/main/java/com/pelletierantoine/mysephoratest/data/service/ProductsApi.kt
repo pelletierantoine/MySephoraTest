@@ -10,6 +10,6 @@ internal interface ProductsApi {
         "Content-Type: application/json; charset=utf-8",
         "Accept: application/json"
     )
-    @GET("reviews")
+    @GET("items.json")
     suspend fun fetchProducts(): List<ProductEntity>
 }

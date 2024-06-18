@@ -4,6 +4,6 @@ import com.squareup.moshi.Json
 
 internal data class ReviewProductEntity(
     @Json(name = "product_id") val productId: Long,
-    @Json(name = "hide") val hide: Boolean,
+    @Json(name = "hide") val hide: Boolean? = null,
     @Json(name = "reviews") val reviews: List<ReviewEntity>,
 )

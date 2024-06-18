@@ -10,6 +10,6 @@ internal interface ReviewsApi {
         "Content-Type: application/json; charset=utf-8",
         "Accept: application/json"
     )
-    @GET("reviews")
-    suspend fun fetchReviewsByProduct(productId: Long): List<ReviewProductEntity>
+    @GET("reviews.json")
+    suspend fun fetchReviewsByProduct(): List<ReviewProductEntity>
 }

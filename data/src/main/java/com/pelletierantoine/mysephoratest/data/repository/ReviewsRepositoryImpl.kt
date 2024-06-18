@@ -12,8 +12,8 @@ internal class ReviewsRepositoryImpl(
 
     private var reviewsByProduct = mutableListOf<ReviewProduct>()
 
-    override suspend fun fetchReviewsByProduct(productId: Long): List<ReviewProduct> {
-        return service.fetchReviewsByProduct(productId)
+    override suspend fun fetchReviews(): List<ReviewProduct> {
+        return service.fetchReviewsByProduct()
             .map(reviewProductMapper::toEntity)
             .also {
                 reviewsByProduct.clear()
@@ -21,7 +21,7 @@ internal class ReviewsRepositoryImpl(
             }
     }
 
-    override fun getReviewsByProduct(productId: Long): List<ReviewProduct> {
+    override fun getReviews(): List<ReviewProduct> {
         return reviewsByProduct
     }
 }

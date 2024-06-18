@@ -14,9 +14,9 @@ internal class ReviewMapper : Mapper<ReviewEntity, Review> {
 
     override fun toEntity(data: ReviewEntity): Review {
         return Review(
-            name = data.name,
-            text = data.text,
-            rating = data.rating
+            name = data.name.orEmpty(),
+            text = data.text.orEmpty(),
+            rating = data.rating ?: -1f
         )
     }
 }

@@ -17,7 +17,7 @@ internal class ReviewProductMapper(
     override fun toEntity(data: ReviewProductEntity): ReviewProduct {
         return ReviewProduct(
             productId = data.productId,
-            hide = data.hide,
+            hide = data.hide ?: false,
             reviews = data.reviews.map(reviewMapper::toEntity)
         )
     }
