@@ -1,3 +1,10 @@
+rootProject.name = "My Sephora Test"
+include(
+    ":app",
+    ":domain",
+    ":data"
+)
+
 pluginManagement {
     repositories {
         google {
@@ -18,7 +25,3 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "My Sephora Test"
-include(":app")
- 
