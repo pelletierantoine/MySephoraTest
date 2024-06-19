@@ -9,8 +9,8 @@ abstract class GenericAdapter<O, Binding : ViewBinding>(
     private val list: MutableList<O>
 ) : RecyclerView.Adapter<GenericAdapter.MyViewHolder<Binding>>() {
 
-    abstract fun onBindData(model: O, position: Int, bindingAdapter: Binding)
-    abstract fun onItemClick(model: O, position: Int, bindingAdapter: Binding)
+    abstract fun onBindData(item: O, position: Int, bindingAdapter: Binding)
+    abstract fun onItemClick(item: O, position: Int, bindingAdapter: Binding)
     abstract fun createBinding(inflater: LayoutInflater, parent: ViewGroup): Binding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder<Binding> {
@@ -86,7 +86,7 @@ abstract class GenericAdapter<O, Binding : ViewBinding>(
         }
     }
 
-    open fun updateItem(item: O, index: Int) {
+    fun updateItem(item: O, index: Int) {
         list[index] = item
         notifyItemChanged(index)
     }

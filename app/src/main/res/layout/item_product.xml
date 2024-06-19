@@ -6,22 +6,35 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="30dp"
-    app:cardElevation="4dp">
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="10dp">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/ivProduct"
-            android:layout_width="match_parent"
+        <FrameLayout
+            android:id="@+id/flImageProduct"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:minHeight="150dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:minHeight="200dp"
+                android:scaleType="fitXY" />
+
+            <ProgressBar
+                android:id="@+id/pbImageProduct"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvProductBrand"
@@ -35,7 +48,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivProduct"
+            app:layout_constraintTop_toBottomOf="@id/flImageProduct"
             tools:text="Sephora" />
 
         <TextView
