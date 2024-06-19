@@ -34,6 +34,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -46,6 +47,8 @@ dependencies {
     implementation(libs.androidx.appcompat)
 
     implementation(libs.material)
+
+    implementation(libs.glide)
 
     implementation(libs.koin)
     implementation(libs.koin.android)

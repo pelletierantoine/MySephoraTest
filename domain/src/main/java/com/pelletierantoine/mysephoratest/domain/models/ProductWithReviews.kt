@@ -6,5 +6,6 @@ data class ProductWithReviews(
     val price: Float,
     val imageUrls: ImageUrls,
     val brand: Brand,
-    val reviews: List<Review>
+    val reviews: List<Review>,
+    var reviewsExpanded: Boolean = false
 )

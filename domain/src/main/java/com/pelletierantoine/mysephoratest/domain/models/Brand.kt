@@ -6,7 +6,7 @@ enum class Brand(
 ) {
     SEPHORA(
         id = "SEPHO",
-        entireName = "SEPHORA_COLLECTION"
+        entireName = "SEPHORA COLLECTION"
     ),
 
     CHANNEL(
