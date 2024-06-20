@@ -39,7 +39,7 @@ class ProductsWithReviewsAssociatedUseCaseTest : BaseTest() {
     private val reviewProduct = ReviewProduct(
         productId = 12,
         hide = false,
-        reviews = listOf(Review(name = "Antoine PELLETIER", text = "Excellent produit !", rating = 4f))
+        reviews = listOf(Review(name = "Antoine PELLETIER", text = "Excellent produit !", rating = 4f, showStars = true))
     )
 
     private val productWithReviews = ProductWithReviews(

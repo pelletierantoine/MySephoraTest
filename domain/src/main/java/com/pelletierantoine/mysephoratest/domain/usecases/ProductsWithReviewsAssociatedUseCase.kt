@@ -19,7 +19,8 @@ class ProductsWithReviewsAssociatedUseCase(
         products.forEach { product ->
             val reviewProduct = reviews?.first { it.productId == product.productId }
             val rating = reviewProduct?.let {
-                it.reviews.sumOf { it.rating.toDouble() } / it.reviews.size
+                val ratingReviews = it.reviews.filter { it.showStars }
+                ratingReviews.sumOf { it.rating.toDouble() } / ratingReviews.size
             }?.toFloat()
             productWithReviews.add(
                 ProductWithReviews(

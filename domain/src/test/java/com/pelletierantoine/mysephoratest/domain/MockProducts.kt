@@ -20,7 +20,7 @@ private val product = Product(
     isSpecialBrand = false
 )
 
-val review = Review(name = "Antoine PELLETIER", text = "Excellent produit !", rating = 4f)
+val review = Review(name = "Antoine PELLETIER", text = "Excellent produit !", rating = 4f, showStars = true)
 
 val productWithReviews = ProductWithReviews(
     productName = product.productName,
