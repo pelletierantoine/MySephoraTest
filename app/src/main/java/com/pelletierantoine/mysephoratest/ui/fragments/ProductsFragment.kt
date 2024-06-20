@@ -108,9 +108,7 @@ class ProductsFragment : Fragment() {
                 handleError(state.isError)
             }
 
-            ProductsFragmentViewModel.State.Empty -> {
-
-            }
+            ProductsFragmentViewModel.State.Empty -> Unit
         }
     }
 
@@ -123,6 +121,7 @@ class ProductsFragment : Fragment() {
     private fun updateProducts(productsWithReviews: List<ProductWithReviews>) {
         if (productsWithReviews.isNotEmpty()) {
             binding.tilSearchBar.visible()
+            binding.tvFilterReviews.visible()
             productsAdapter.submitList(productsWithReviews)
         } else {
             handleError(true)
@@ -132,6 +131,7 @@ class ProductsFragment : Fragment() {
     private fun handleError(isError: Boolean) {
         with(binding) {
             if (isError) {
+                tvFilterReviews.gone()
                 tilSearchBar.invisible()
                 lottieError.visible()
                 tvRetry.visible()
