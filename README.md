@@ -1,4 +1,4 @@
-# My Smart Home
+# SEPHORA TEST
 
 My Sephora test is an application for showing some products with reviews associated.
 
@@ -18,7 +18,7 @@ My Sephora test is an application for showing some products with reviews associa
 
 ## Features
 
-List of products with possibility to expand the view to show the reviews associated 
+List of products with possibility to expand the view to show the reviews associated
 
 You can also :
 
