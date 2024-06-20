@@ -7,21 +7,24 @@ kotlin = "1.9.0"
 appcompat = "1.7.0"
 coreKtx = "1.13.1"
 coroutines = "1.7.3"
-glide = "4.12.0"
+glide = "4.15.1"
 koin = "3.4.3"
 espressoCore = "3.5.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
+lottie = "6.0.0"
 material = "1.12.0"
 mockk = "1.13.3" # use old version because there is bug with android testing https://github.com/mockk/mockk/issues/1035
 moshi = "1.15.0"
 okhttp = "4.11.0"
 retrofit = "2.9.0"
+slashScreen = "1.0.0-alpha02"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-splashscreen = {module= "androidx.core:core-splashscreen", version.ref = "slashScreen"}
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
@@ -36,6 +39,8 @@ glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
@@ -49,6 +54,7 @@ okhttp-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 retrofit-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

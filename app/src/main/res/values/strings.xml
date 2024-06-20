@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Sephora Test</string>
+    <string name="hint_search_bar">Chercher un produit</string>
+    <string name="products">Produits</string>
+    <string name="anonyme">Anonyme</string>
+    <string name="search">Rechercher</string>
+    <string name="retry">Réessayer</string>
+    <string name="sort_reviews">Trier les reviews</string>
+    <string name="dialog_title_sorting_reviews">Trier par</string>
+    <string name="sorting_reviews_asc">Par notre croissante</string>
+    <string name="sorting_reviews_dsc">Par note décroissante</string>
 </resources>

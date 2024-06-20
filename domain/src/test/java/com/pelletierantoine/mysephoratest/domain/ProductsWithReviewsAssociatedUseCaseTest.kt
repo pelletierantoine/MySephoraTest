@@ -45,13 +45,13 @@ class ProductsWithReviewsAssociatedUseCaseTest : BaseTest() {
     private val productWithReviews = ProductWithReviews(
         productName = product.productName,
         description = product.description,
-        price = product.price,
-        imageUrls = product.imageUrls,
-        brand = Brand.SEPHORA,
-        reviews = listOf(
-            Review(name = "Antoine PELLETIER", text = "Excellent produit !", rating = 4f)
-
-        )
+        numberRating = "1 avis",
+        brand = Brand.SEPHORA.entireName,
+        priceFormatted = product.price.toFormattedPrice(),
+        imageUrl = "https://dev.sephora.fr/on/demandware.static/-/Library-Sites-SephoraV2/default/dw521a3f33/brands/institbanner/SEPHO_900_280_institutional_banner_20210927_V2.jpg",
+        reviews = reviewProduct.reviews,
+        reviewsExpanded = false,
+        rating = 4f,
     )
 
     override fun setUp() {
@@ -88,7 +88,7 @@ class ProductsWithReviewsAssociatedUseCaseTest : BaseTest() {
         coEvery { mockFetchProductsUseCase.invoke() } returns Result.success(listOf(product))
         coEvery { mockFetchReviewsUseCase.invoke() } returns Result.failure(IllegalStateException())
 
-        val expected = listOf(productWithReviews.copy(reviews = emptyList()))
+        val expected = listOf(productWithReviews.copy(reviews = emptyList(), rating = 0f, numberRating = "0 avis"))
 
         val result = productsWithAssociatedReviewsUseCase()
         assertEquals(expected, result.getOrNull())

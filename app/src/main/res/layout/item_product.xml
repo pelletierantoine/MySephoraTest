@@ -92,6 +92,21 @@
             app:layout_constraintTop_toBottomOf="@id/tvProductPrice"
             tools:text="6 avis" />
 
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@android:style/Widget.DeviceDefault.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/backgroundRatingBar"
+            android:progressTint="@color/progressRatingBar"
+            android:stepSize="0.1"
+            android:theme="@style/Widget.AppCompat.RatingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProductReviews" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvReviews"
             android:layout_width="0dp"
@@ -99,7 +114,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvProductReviews"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
             tools:itemCount="3"
             tools:listitem="@layout/item_review" />
 
@@ -109,7 +124,7 @@
             android:layout_height="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvProductReviews">
+            app:layout_constraintTop_toBottomOf="@id/rvReviews">
 
             <ImageView
                 android:id="@+id/ivArrowReviews"

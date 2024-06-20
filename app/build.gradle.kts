@@ -34,7 +34,6 @@ android {
 
     buildFeatures {
         viewBinding = true
-        dataBinding = true
     }
 }
 
@@ -45,10 +44,13 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.splashscreen)
 
     implementation(libs.material)
 
     implementation(libs.glide)
+
+    implementation(libs.lottie)
 
     implementation(libs.koin)
     implementation(libs.koin.android)

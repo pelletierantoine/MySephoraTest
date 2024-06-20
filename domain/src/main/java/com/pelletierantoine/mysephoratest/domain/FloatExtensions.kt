@@ -1,7 +1,6 @@
-package com.pelletierantoine.mysephoratest.ui.extensions
+package com.pelletierantoine.mysephoratest.domain
 
 import java.text.NumberFormat
-import java.util.Currency
 import java.util.Locale
 
 fun Float.toFormattedPrice(): String {
