@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pelletierantoine.mysephoratest.R
 import com.pelletierantoine.mysephoratest.databinding.ItemReviewBinding
 import com.pelletierantoine.mysephoratest.domain.models.Review
+import com.pelletierantoine.mysephoratest.ui.extensions.gone
+import com.pelletierantoine.mysephoratest.ui.extensions.visible
 
 class ReviewsAdapter : ListAdapter<Review, ReviewsAdapter.ReviewsViewHolder>(ReviewsDiffCallback()) {
 
@@ -22,7 +24,10 @@ class ReviewsAdapter : ListAdapter<Review, ReviewsAdapter.ReviewsViewHolder>(Rev
     inner class ReviewsViewHolder(private val binding: ItemReviewBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Review) {
             with(binding) {
-                ratingBarReview.rating = item.rating
+                with(ratingBarReview) {
+                    if (item.showStars) visible() else gone()
+                    rating = item.rating
+                }
                 tvNameReview.text = item.name.ifEmpty {
                     binding.root.context.getString(R.string.anonyme)
                 }

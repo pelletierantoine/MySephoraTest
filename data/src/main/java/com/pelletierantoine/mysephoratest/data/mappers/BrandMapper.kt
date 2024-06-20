@@ -7,7 +7,7 @@ internal class BrandMapper : Mapper<BrandEntity, Brand> {
     override fun fromEntity(entity: Brand): BrandEntity {
         return BrandEntity(
             id = entity.id,
-            name = entity.name
+            name = entity.entireName
         )
     }
 

@@ -16,7 +16,8 @@ internal class ReviewMapper : Mapper<ReviewEntity, Review> {
         return Review(
             name = data.name.orEmpty(),
             text = data.text.orEmpty(),
-            rating = data.rating ?: -1f
+            rating = data.rating ?: -1f,
+            showStars = data.rating != null
         )
     }
 }
