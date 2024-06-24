@@ -13,15 +13,17 @@ internal class ProductsRepositoryImpl(
     private val products = mutableListOf<Product>()
 
     override suspend fun fetchProducts(): List<Product> {
-        return service.fetchProducts()
-            .map(productsMapper::toEntity)
-            .also {
-                products.clear()
-                products.addAll(it)
-            }
+        return if (products.isEmpty()) {
+            service.fetchProducts()
+                .map(productsMapper::toEntity)
+                .also {
+                    products.clear()
+                    products.addAll(it)
+                }
+        } else {
+            getProducts()
+        }
     }
 
-    override fun getProducts(): List<Product> {
-        return products
-    }
+    override fun getProducts(): List<Product> = products
 }

@@ -13,8 +13,8 @@ class ProductsWithReviewsAssociatedUseCase(
 ) : NoParamsSuspendingUseCase<List<ProductWithReviews>>() {
 
     override suspend fun run(): Result<List<ProductWithReviews>> = runCatching {
-        val products = productsUseCase.invoke().getOrThrow()
-        val reviews = reviewsUseCase.invoke().getOrNull()
+        val products = productsUseCase().getOrThrow()
+        val reviews = reviewsUseCase().getOrNull()
 
         val productWithReviews: List<ProductWithReviews> = products.map { product ->
             val reviewProduct = reviews?.first { it.productId == product.productId }

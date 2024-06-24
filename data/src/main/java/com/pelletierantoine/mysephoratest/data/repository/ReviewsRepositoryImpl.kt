@@ -13,15 +13,17 @@ internal class ReviewsRepositoryImpl(
     private var reviewsByProduct = mutableListOf<ReviewProduct>()
 
     override suspend fun fetchReviews(): List<ReviewProduct> {
-        return service.fetchReviewsByProduct()
-            .map(reviewProductMapper::toEntity)
-            .also {
-                reviewsByProduct.clear()
-                reviewsByProduct.addAll(it)
-            }
+        return if (reviewsByProduct.isEmpty()) {
+            service.fetchReviewsByProduct()
+                .map(reviewProductMapper::toEntity)
+                .also {
+                    reviewsByProduct.clear()
+                    reviewsByProduct.addAll(it)
+                }
+        } else {
+            getReviews()
+        }
     }
 
-    override fun getReviews(): List<ReviewProduct> {
-        return reviewsByProduct
-    }
+    override fun getReviews(): List<ReviewProduct> = reviewsByProduct
 }

@@ -10,8 +10,8 @@ class FilterReviewsBySortingTypeUseCase : SynchronousUseCase<FilterReviewsBySort
     override fun create(params: Params): List<ProductWithReviews> {
         return params.productsReviews.map {
             val reviews = when (params.sortingType) {
-                SortingType.WORST_TO_BEST -> it.reviews.filter { it.showStars }.sortedByDescending { it.rating }
-                SortingType.BEST_TO_WORST -> it.reviews.filter { it.showStars }.sortedBy { it.rating }
+                SortingType.WORST_TO_BEST -> it.reviews.sortedByDescending { it.rating }
+                SortingType.BEST_TO_WORST -> it.reviews.sortedBy { it.rating }
             }
             it.copy(reviews = reviews)
         }
